@@ -45,13 +45,13 @@
     });
 </script>
     <main class="container mx-auto p-8 bg-white shadow-lg rounded-lg mt-8">
-    <h1 class="text-3xl font-semibold text-center text-gray-800 mb-6">Formulir Pendaftaran Siswa</h1>
+    <h1 class="text-3xl font-semibold text-center text-gray-800 mb-6">Student Registration Form</h1>
 
     <form name="registrationForm" onsubmit="validateForm(event)">
         <!-- Nama Lengkap -->
         <div class="mb-4">
-            <label for="fullName" class="block text-gray-700 font-medium">Nama Lengkap</label>
-            <input type="text" id="fullName" name="fullName" placeholder="Nama Lengkap"
+            <label for="fullName" class="block text-gray-700 font-medium">Full Name :</label>
+            <input type="text" id="fullName" name="fullName" placeholder="Enter Your Full Name"
                 class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
                 onfocus="highlightInput(event)" onblur="removeHighlight(event)">
             <p id="fullNameError" class="text-red-500 text-sm error-message"></p>
@@ -59,8 +59,8 @@
 
         <!-- Nomor Induk Mahasiswa (NIM) -->
         <div class="mb-4">
-            <label for="nim" class="block text-gray-700 font-medium">Nomor Induk Mahasiswa (NIM)</label>
-            <input type="text" id="nim" name="nim" placeholder="Nomor Induk Mahasiswa"
+            <label for="nim" class="block text-gray-700 font-medium">Student ID (NIM) :</label>
+            <input type="text" id="nim" name="nim" placeholder="Enter Your Name"
                 class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
                 onfocus="highlightInput(event)" onblur="removeHighlight(event)">
             <p id="nimError" class="text-red-500 text-sm error-message"></p>
@@ -68,8 +68,8 @@
 
         <!-- Alamat Email -->
         <div class="mb-4">
-            <label for="email" class="block text-gray-700 font-medium">Alamat Email</label>
-            <input type="email" id="email" name="email" placeholder="Alamat Email"
+            <label for="email" class="block text-gray-700 font-medium">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="Enter Your Email"
                 class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
                 onfocus="highlightInput(event)" onblur="removeHighlight(event)">
             <p id="emailError" class="text-red-500 text-sm error-message"></p>
@@ -77,20 +77,21 @@
 
         <!-- Fakultas/Jurusan -->
         <div class="mb-4">
-            <label for="department" class="block text-gray-700 font-medium">Fakultas/Jurusan</label>
+            <label for="department" class="block text-gray-700 font-medium">Faculty/Major</label>
             <select id="department" name="department" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
                 onfocus="highlightInput(event)" onblur="removeHighlight(event)">
-                <option value="Teknik Informatika">Teknik Informatika</option>
-                <option value="Sistem Informasi">Sistem Informasi</option>
-                <option value="Manajemen">Manajemen</option>
-                <option value="Akuntansi">Akuntansi</option>
-                <option value="Hukum">Hukum</option>
+                <option value="Teknik Informatika">Faculty of Information Technology</option> 
+                <option value="Sistem Informasi">Faculty Economics</option> 
+                <option value="Manajemen">Faculty of Nursing Science</option> 
+                <option value="Akuntansi">Faculty of Philosophy</option> 
+                <option value="Hukum">Faculty of Mathematics and Natural Sciences</option>
+                <option value="Akuntansi">Faculty of Teacher Training and Science</option>
             </select>
         </div>
 
         <!-- Tanggal Lahir -->
         <div class="mb-4">
-            <label for="birthDate" class="block text-gray-700 font-medium">Tanggal Lahir</label>
+            <label for="birthDate" class="block text-gray-700 font-medium">Date of Birth :</label>
             <input type="date" id="birthDate" name="birthDate"
                 class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
                 onfocus="highlightInput(event)" onblur="removeHighlight(event)">
@@ -98,22 +99,22 @@
 
         <!-- Jenis Kelamin -->
         <div class="mb-4">
-            <p class="font-medium text-gray-700">Jenis Kelamin</p>
+            <p class="font-medium text-gray-700">Gender :</p>
             <div class="flex items-center space-x-4">
                 <div class="flex items-center">
                     <input type="radio" id="male" name="gender" value="Pria" class="mr-2">
-                    <label for="male" class="text-gray-600">Pria</label>
+                    <label for="male" class="text-gray-600">Male</label>
                 </div>
                 <div class="flex items-center">
                     <input type="radio" id="female" name="gender" value="Wanita" class="mr-2">
-                    <label for="female" class="text-gray-600">Wanita</label>
+                    <label for="female" class="text-gray-600">Female</label>
                 </div>
             </div>
         </div>
 
         <!-- Alamat -->
         <div class="mb-4">
-            <label for="address" class="block text-gray-700 font-medium">Alamat</label>
+            <label for="address" class="block text-gray-700 font-medium">Address :</label>
             <textarea id="address" name="address" placeholder="Alamat"
                 class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
                 onfocus="highlightInput(event)" onblur="removeHighlight(event)"></textarea>
@@ -122,7 +123,7 @@
 
         <!-- Nomor Telepon -->
         <div class="mb-4">
-            <label for="phone" class="block text-gray-700 font-medium">Nomor Telepon</label>
+            <label for="phone" class="block text-gray-700 font-medium">Phone Number :</label>
             <input type="text" id="phone" name="phone" placeholder="Nomor Telepon"
                 class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
                 onfocus="highlightInput(event)" onblur="removeHighlight(event)">
