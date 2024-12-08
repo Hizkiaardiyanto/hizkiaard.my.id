@@ -44,52 +44,162 @@
         menu.classList.toggle('hidden'); // Menampilkan/menyembunyikan menu
     });
 </script>
-    <main>
-        <div class="form-container container">
-            <form action="process.php" method="get" target="_blank">
-                <h1>Contact Us</h1>
-                <input type="text" id="Firstname" name="Firstname" placeholder="First Name">
-                <input type="text" id="Familyname" name="Firstname" placeholder="Family Name">
-                <input type="text" id="Email" name="Email" placeholder="Email">
-                <input type="text" id="UserName" name="UserName" placeholder="User Name">
-                <input type="password" id="Pass" name="Pass"placeholder="Password">
-                <div class="radio-container">
-                    <p>Gender : </p>
-                    <div class="radio">
-                        <label for="Male">Male :</label>
-                        <input type="radio" id="Male" name="Gender" value="Male">
-                    </div>
-                    <div class="radio">
-                        <label for="Female">Female :</label>
-                        <input type="radio" id="Female" name="Gender" value="Female">
-                    </div>
-                </div>
-                <label for="BirthDate">Date of Birth :</label>
-                <input type="date" id="BirthDate" name="BirthDate">
-                <select name="religion" id="religion">
-                    <option value="Christian">Christian</option>
-                    <option value="Catholic">Catholic</option>
-                    <option value="Buddist">Buddist</option>
-                    <option value="Muslim">Muslim</option>
-                    <option value="Hindu">Hindu</option>
-                </select>
-                <textarea name="Address" id="Address" placeholder="Address"></textarea>
-                <div class="checkbox-container">
-                    <a>Select Your Hobbies : </a>
-                    <div class="checkbox">
-                        <label for="Reading"> Reading : </label>
-                        <input type="checkbox" id="Reading" name="Reading" value="Reading">
-                    </div>
-                    <div class="checkbox">
-                        <label for="Travelling"> Travelling : </label>
-                        <input type="checkbox" id="Travelling" name="Travelling" value="Travelling">
-                    </div>
-                </div>
-                <input type="submit" value="Save" >
-            </form>
+    <main class="container mx-auto p-8 bg-white shadow-lg rounded-lg mt-8">
+    <h1 class="text-3xl font-semibold text-center text-gray-800 mb-6">Formulir Pendaftaran Siswa</h1>
+
+    <form name="registrationForm" onsubmit="validateForm(event)">
+        <!-- Nama Lengkap -->
+        <div class="mb-4">
+            <label for="fullName" class="block text-gray-700 font-medium">Nama Lengkap</label>
+            <input type="text" id="fullName" name="fullName" placeholder="Nama Lengkap"
+                class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
+                onfocus="highlightInput(event)" onblur="removeHighlight(event)">
+            <p id="fullNameError" class="text-red-500 text-sm error-message"></p>
         </div>
-    </main>
-    
+
+        <!-- Nomor Induk Mahasiswa (NIM) -->
+        <div class="mb-4">
+            <label for="nim" class="block text-gray-700 font-medium">Nomor Induk Mahasiswa (NIM)</label>
+            <input type="text" id="nim" name="nim" placeholder="Nomor Induk Mahasiswa"
+                class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
+                onfocus="highlightInput(event)" onblur="removeHighlight(event)">
+            <p id="nimError" class="text-red-500 text-sm error-message"></p>
+        </div>
+
+        <!-- Alamat Email -->
+        <div class="mb-4">
+            <label for="email" class="block text-gray-700 font-medium">Alamat Email</label>
+            <input type="email" id="email" name="email" placeholder="Alamat Email"
+                class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
+                onfocus="highlightInput(event)" onblur="removeHighlight(event)">
+            <p id="emailError" class="text-red-500 text-sm error-message"></p>
+        </div>
+
+        <!-- Fakultas/Jurusan -->
+        <div class="mb-4">
+            <label for="department" class="block text-gray-700 font-medium">Fakultas/Jurusan</label>
+            <select id="department" name="department" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
+                onfocus="highlightInput(event)" onblur="removeHighlight(event)">
+                <option value="Teknik Informatika">Teknik Informatika</option>
+                <option value="Sistem Informasi">Sistem Informasi</option>
+                <option value="Manajemen">Manajemen</option>
+                <option value="Akuntansi">Akuntansi</option>
+                <option value="Hukum">Hukum</option>
+            </select>
+        </div>
+
+        <!-- Tanggal Lahir -->
+        <div class="mb-4">
+            <label for="birthDate" class="block text-gray-700 font-medium">Tanggal Lahir</label>
+            <input type="date" id="birthDate" name="birthDate"
+                class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
+                onfocus="highlightInput(event)" onblur="removeHighlight(event)">
+        </div>
+
+        <!-- Jenis Kelamin -->
+        <div class="mb-4">
+            <p class="font-medium text-gray-700">Jenis Kelamin</p>
+            <div class="flex items-center space-x-4">
+                <div class="flex items-center">
+                    <input type="radio" id="male" name="gender" value="Pria" class="mr-2">
+                    <label for="male" class="text-gray-600">Pria</label>
+                </div>
+                <div class="flex items-center">
+                    <input type="radio" id="female" name="gender" value="Wanita" class="mr-2">
+                    <label for="female" class="text-gray-600">Wanita</label>
+                </div>
+            </div>
+        </div>
+
+        <!-- Alamat -->
+        <div class="mb-4">
+            <label for="address" class="block text-gray-700 font-medium">Alamat</label>
+            <textarea id="address" name="address" placeholder="Alamat"
+                class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
+                onfocus="highlightInput(event)" onblur="removeHighlight(event)"></textarea>
+            <p id="addressError" class="text-red-500 text-sm error-message"></p>
+        </div>
+
+        <!-- Nomor Telepon -->
+        <div class="mb-4">
+            <label for="phone" class="block text-gray-700 font-medium">Nomor Telepon</label>
+            <input type="text" id="phone" name="phone" placeholder="Nomor Telepon"
+                class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
+                onfocus="highlightInput(event)" onblur="removeHighlight(event)">
+            <p id="phoneError" class="text-red-500 text-sm error-message"></p>
+        </div>
+
+        <!-- Submit Button -->
+        <div class="mb-4">
+            <button type="submit"
+                class="w-full p-3 bg-blue-500 text-white rounded-lg cursor-pointer hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                Daftar
+            </button>
+        </div>
+    </form>
+</main>
+
+<script>
+    // Validasi Formulir
+    function validateForm(event) {
+        event.preventDefault(); // Mencegah pengiriman formulir jika ada kesalahan
+
+        let isValid = true;
+        const formElements = document.forms['registrationForm'].elements;
+        const errorMessages = document.querySelectorAll('.error-message');
+
+        // Menghapus pesan error yang lama
+        errorMessages.forEach((msg) => msg.textContent = '');
+
+        // Validasi nama lengkap
+        if (formElements['fullName'].value === '') {
+            document.getElementById('fullNameError').textContent = 'Nama Lengkap wajib diisi';
+            isValid = false;
+        }
+
+        // Validasi NIM
+        if (formElements['nim'].value === '') {
+            document.getElementById('nimError').textContent = 'NIM wajib diisi';
+            isValid = false;
+        }
+
+        // Validasi email
+        const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+        if (!emailPattern.test(formElements['email'].value)) {
+            document.getElementById('emailError').textContent = 'Format email tidak valid';
+            isValid = false;
+        }
+
+        // Validasi nomor telepon
+        const phonePattern = /^\d{10,15}$/;
+        if (!phonePattern.test(formElements['phone'].value)) {
+            document.getElementById('phoneError').textContent = 'Nomor telepon harus berupa angka dan memiliki panjang 10-15 karakter';
+            isValid = false;
+        }
+
+        // Validasi alamat
+        if (formElements['address'].value === '') {
+            document.getElementById('addressError').textContent = 'Alamat wajib diisi';
+            isValid = false;
+        }
+
+        // Jika semua validasi lolos, kirim formulir dan reset
+        if (isValid) {
+            alert("Formulir berhasil dikirim!");
+            document.forms['registrationForm'].reset(); // Reset formulir setelah pengiriman
+        }
+    }
+
+    // Sorot input yang sedang fokus
+    function highlightInput(event) {
+        event.target.classList.add('border-blue-500', 'focus:ring-2', 'focus:ring-blue-500');
+    }
+
+    // Hapus sorotan ketika input kehilangan fokus
+    function removeHighlight(event) {
+        event.target.classList.remove('border-blue-500', 'focus:ring-2', 'focus:ring-blue-500');
+    }
+</script>
         
     <footer>
         <div class="footer-content container">
