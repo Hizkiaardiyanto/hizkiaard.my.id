@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="asset/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="icon" href="asset/gambar/favicon-new.ico">
     <script src="https://kit.fontawesome.com/c121f5569d.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Hind+Vadodara:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -27,21 +27,27 @@
         </div>
     </nav>
 
-    <header>
-        <div class="header-content">
+    <header class="relative bg-gray-100">
+        <div class="header-content relative">
             <div class="img-container">
-                <img src="asset/gambar/slide1.jpeg" alt="Waspada Penipuan">
+                <img src="slide1.jpeg" alt="Waspada Penipuan" class="w-full h-[400px] object-cover">
             </div>
-            <div class="button">
-                <a href="#"><i class="fa-solid fa-chevron-left"></i></a>
-                <a href="#"><i class="fa-solid fa-chevron-right"></i></a>
+
+            <div class="button absolute inset-0 flex items-center justify-between px-4">
+                <a href="#" class="bg-white text-gray-800 rounded-full p-2 shadow hover:bg-gray-200">
+                    <i class="fa-solid fa-chevron-left text-lg"></i>
+                </a>
+                <a href="#" class="bg-white text-gray-800 rounded-full p-2 shadow hover:bg-gray-200">
+                    <i class="fa-solid fa-chevron-right text-lg"></i>
+                </a>
             </div>
         </div>
-        <div class="bullet-container">
-            <a href="#" class="bullet active"></a>
-            <a href="#" class="bullet"></a>
+
+        <div class="bullet-container flex justify-center mt-4 space-x-2">
+            <a href="#" class="bullet w-3 h-3 bg-gray-500 rounded-full hover:bg-gray-700 active:bg-gray-800"></a>
+            <a href="#" class="bullet w-3 h-3 bg-gray-300 rounded-full hover:bg-gray-700"></a>
         </div>
-    </header>
+    </header>    
 
     <main>
         <section class="atas container">
