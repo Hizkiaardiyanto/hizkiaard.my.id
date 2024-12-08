@@ -48,48 +48,48 @@
     <h1 class="text-3xl font-semibold text-center text-gray-800 mb-6">Student Registration Form</h1>
 
     <form name="registrationForm" onsubmit="validateForm(event)">
-        <!-- Nama Lengkap -->
+        <!-- Full Name -->
         <div class="mb-4">
             <label for="fullName" class="block text-gray-700 font-medium">Full Name :</label>
-            <input type="text" id="fullName" name="fullName" placeholder="Enter Your Full Name"
+            <input type="text" id="fullName" name="fullName" placeholder="Full Name"
                 class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
                 onfocus="highlightInput(event)" onblur="removeHighlight(event)">
             <p id="fullNameError" class="text-red-500 text-sm error-message"></p>
         </div>
 
-        <!-- Nomor Induk Mahasiswa (NIM) -->
+        <!-- Student ID (NIM) -->
         <div class="mb-4">
             <label for="nim" class="block text-gray-700 font-medium">Student ID (NIM) :</label>
-            <input type="text" id="nim" name="nim" placeholder="Enter Your Name"
+            <input type="text" id="nim" name="nim" placeholder="Student ID"
                 class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
                 onfocus="highlightInput(event)" onblur="removeHighlight(event)">
             <p id="nimError" class="text-red-500 text-sm error-message"></p>
         </div>
 
-        <!-- Alamat Email -->
+        <!-- Email Address -->
         <div class="mb-4">
             <label for="email" class="block text-gray-700 font-medium">Email Address :</label>
-            <input type="email" id="email" name="email" placeholder="Enter Your Email"
+            <input type="email" id="email" name="email" placeholder="Email Address"
                 class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
                 onfocus="highlightInput(event)" onblur="removeHighlight(event)">
             <p id="emailError" class="text-red-500 text-sm error-message"></p>
         </div>
 
-        <!-- Fakultas/Jurusan -->
+        <!-- Faculty/Major -->
         <div class="mb-4">
             <label for="department" class="block text-gray-700 font-medium">Faculty/Major :</label>
             <select id="department" name="department" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
                 onfocus="highlightInput(event)" onblur="removeHighlight(event)">
-                <option value="Teknik Informatika">Faculty of Information Technology</option> 
-                <option value="Sistem Informasi">Faculty Economics</option> 
-                <option value="Manajemen">Faculty of Nursing Science</option> 
-                <option value="Akuntansi">Faculty of Philosophy</option> 
-                <option value="Hukum">Faculty of Mathematics and Natural Sciences</option>
-                <option value="Akuntansi">Faculty of Teacher Training and Science</option>
+                <option value="" disabled selected>Select Your Faculty</option>
+                <option value="Computer Science">Computer Science</option>
+                <option value="Information Systems">Information Systems</option>
+                <option value="Management">Management</option>
+                <option value="Accounting">Accounting</option>
+                <option value="Law">Law</option>
             </select>
         </div>
 
-        <!-- Tanggal Lahir -->
+        <!-- Date of Birth -->
         <div class="mb-4">
             <label for="birthDate" class="block text-gray-700 font-medium">Date of Birth :</label>
             <input type="date" id="birthDate" name="birthDate"
@@ -97,34 +97,34 @@
                 onfocus="highlightInput(event)" onblur="removeHighlight(event)">
         </div>
 
-        <!-- Jenis Kelamin -->
+        <!-- Gender -->
         <div class="mb-4">
-            <p class="font-medium text-gray-700">Gender :</p>
+            <p class="font-medium text-gray-700">Gender</p>
             <div class="flex items-center space-x-4">
                 <div class="flex items-center">
-                    <input type="radio" id="male" name="gender" value="Pria" class="mr-2">
+                    <input type="radio" id="male" name="gender" value="Male" class="mr-2">
                     <label for="male" class="text-gray-600">Male</label>
                 </div>
                 <div class="flex items-center">
-                    <input type="radio" id="female" name="gender" value="Wanita" class="mr-2">
+                    <input type="radio" id="female" name="gender" value="Female" class="mr-2">
                     <label for="female" class="text-gray-600">Female</label>
                 </div>
             </div>
         </div>
 
-        <!-- Alamat -->
+        <!-- Address -->
         <div class="mb-4">
             <label for="address" class="block text-gray-700 font-medium">Address :</label>
-            <textarea id="address" name="address" placeholder="Alamat"
+            <textarea id="address" name="address" placeholder="Address"
                 class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
                 onfocus="highlightInput(event)" onblur="removeHighlight(event)"></textarea>
             <p id="addressError" class="text-red-500 text-sm error-message"></p>
         </div>
 
-        <!-- Nomor Telepon -->
+        <!-- Phone Number -->
         <div class="mb-4">
             <label for="phone" class="block text-gray-700 font-medium">Phone Number :</label>
-            <input type="text" id="phone" name="phone" placeholder="Nomor Telepon"
+            <input type="text" id="phone" name="phone" placeholder="Phone Number"
                 class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
                 onfocus="highlightInput(event)" onblur="removeHighlight(event)">
             <p id="phoneError" class="text-red-500 text-sm error-message"></p>
@@ -134,69 +134,69 @@
         <div class="mb-4">
             <button type="submit"
                 class="w-full p-3 bg-blue-500 text-white rounded-lg cursor-pointer hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500">
-                Daftar
+                Register
             </button>
         </div>
     </form>
 </main>
 
 <script>
-    // Validasi Formulir
+    // Form Validation
     function validateForm(event) {
-        event.preventDefault(); // Mencegah pengiriman formulir jika ada kesalahan
+        event.preventDefault(); // Prevent form submission if there are errors
 
         let isValid = true;
         const formElements = document.forms['registrationForm'].elements;
         const errorMessages = document.querySelectorAll('.error-message');
 
-        // Menghapus pesan error yang lama
+        // Clear old error messages
         errorMessages.forEach((msg) => msg.textContent = '');
 
-        // Validasi nama lengkap
+        // Validate full name
         if (formElements['fullName'].value === '') {
-            document.getElementById('fullNameError').textContent = 'Nama Lengkap wajib diisi';
+            document.getElementById('fullNameError').textContent = 'Full Name is required';
             isValid = false;
         }
 
-        // Validasi NIM
+        // Validate Student ID
         if (formElements['nim'].value === '') {
-            document.getElementById('nimError').textContent = 'NIM wajib diisi';
+            document.getElementById('nimError').textContent = 'Student ID is required';
             isValid = false;
         }
 
-        // Validasi email
+        // Validate email
         const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
         if (!emailPattern.test(formElements['email'].value)) {
-            document.getElementById('emailError').textContent = 'Format email tidak valid';
+            document.getElementById('emailError').textContent = 'Invalid email format';
             isValid = false;
         }
 
-        // Validasi nomor telepon
+        // Validate phone number
         const phonePattern = /^\d{10,15}$/;
         if (!phonePattern.test(formElements['phone'].value)) {
-            document.getElementById('phoneError').textContent = 'Nomor telepon harus berupa angka dan memiliki panjang 10-15 karakter';
+            document.getElementById('phoneError').textContent = 'Phone number must be numeric and 10-15 characters long';
             isValid = false;
         }
 
-        // Validasi alamat
+        // Validate address
         if (formElements['address'].value === '') {
-            document.getElementById('addressError').textContent = 'Alamat wajib diisi';
+            document.getElementById('addressError').textContent = 'Address is required';
             isValid = false;
         }
 
-        // Jika semua validasi lolos, kirim formulir dan reset
+        // If all validations pass, submit the form and reset
         if (isValid) {
-            alert("Formulir berhasil dikirim!");
-            document.forms['registrationForm'].reset(); // Reset formulir setelah pengiriman
+            alert("Form successfully submitted!");
+            document.forms['registrationForm'].reset(); // Reset the form after submission
         }
     }
 
-    // Sorot input yang sedang fokus
+    // Highlight input on focus
     function highlightInput(event) {
         event.target.classList.add('border-blue-500', 'focus:ring-2', 'focus:ring-blue-500');
     }
 
-    // Hapus sorotan ketika input kehilangan fokus
+    // Remove highlight when input loses focus
     function removeHighlight(event) {
         event.target.classList.remove('border-blue-500', 'focus:ring-2', 'focus:ring-blue-500');
     }
