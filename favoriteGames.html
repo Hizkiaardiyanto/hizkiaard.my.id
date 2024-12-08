@@ -3,29 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="asset/style.css">
-    <link rel="icon" href="asset/gambar/favicon-new.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" href="favicon-new.ico">
     <script src="https://kit.fontawesome.com/c121f5569d.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Hind+Vadodara:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <title>Pegadaian</title>
 </head>
 <body>
-    <nav>
-        <div class="nav-content container">
-            <a href="#">
-                <img class="logo" src="Logo_Syariah_Hijau_Tanpa_Slogan.png" alt="Pegadaian">
-            </a>
-            <ul>
-                <li><a href="index.html">HOMEPAGE</a></li>
-                <li><a href="biodata.html">BIODATA</a></li>
-                <li><a href="contact_us.html">CONTACT US</a></li>
-                <li><a href="favoriteGames.html">FAVORITE GAMES</a></li>
-                <li><a href="#">
-                    <img src="search.png" alt="search logo">
-                </a></li>
-            </ul>
-        </div>
-    </nav>
+    <nav class="bg-green-500 shadow-lg">
+    <div class="container mx-auto flex items-center justify-between py-4 px-6">
+        <a href="#">
+            <img class="h-10" src="Logo_Syariah_Hijau_Tanpa_Slogan.png" alt="Pegadaian">
+        </a>
+
+        <button id="menu-toggle" class="block lg:hidden text-white focus:outline-none">
+            <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+            </svg>
+        </button>
+
+        <ul id="menu" class="hidden lg:flex flex-col lg:flex-row items-center lg:space-x-6 text-white font-medium">
+            <li><a href="index.html" class="hover:text-gray-200 py-2 lg:py-0">HOMEPAGE</a></li>
+            <li><a href="biodata.html" class="hover:text-gray-200 py-2 lg:py-0">BIODATA</a></li>
+            <li><a href="contact_us.html" class="hover:text-gray-200 py-2 lg:py-0">CONTACT US</a></li>
+            <li><a href="favoriteGames.html" class="hover:text-gray-200 py-2 lg:py-0">FAVORITE GAMES</a></li>
+            <li>
+                <a href="#" class="flex items-center py-2 lg:py-0">
+                    <img class="h-6 w-6" src="search.png" alt="Search logo">
+                </a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const menu = document.getElementById('menu');
+
+    menuToggle.addEventListener('click', () => {
+        menu.classList.toggle('hidden'); // Menampilkan/menyembunyikan menu
+    });
+</script>
     <main>
         <div class="gallery-container container">
             <h2>My Favorite Games</h2>
