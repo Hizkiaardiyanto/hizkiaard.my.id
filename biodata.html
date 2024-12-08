@@ -35,6 +35,15 @@
         </ul>
     </div>
 </nav>
+
+<script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const menu = document.getElementById('menu');
+
+    menuToggle.addEventListener('click', () => {
+        menu.classList.toggle('hidden'); // Menampilkan/menyembunyikan menu
+    });
+</script>
     <main>
         <div class="bio-container container">
             <img src="profile-pic.jpg" alt="profile-pic">
