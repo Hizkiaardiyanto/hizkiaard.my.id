@@ -251,70 +251,91 @@
     </section>
 </main>
                     
-                    <div class="keterangan">
-                        <p>Update: 23 Oct 2024</p>
-                        <a href="#">Selengkapnya</a>
-                    </div>
-                </div>
-                
-            </div>
-            <div class="gambar-karpet">
-                <div class="text-wrapper">
-                    <div class="title">
-                        <h2>Jadwal Sholat</h2>
-                    </div>
+<div class="keterangan">
+    <p class="text-gray-600">Update: 23 Oct 2024</p>
+    <a href="#" class="text-blue-500 hover:underline">Selengkapnya</a>
+</div>
 
-                    <div class="main-text">
-                        <select id="provinsi" name="locality">
-                            <option value="0">Aceh</option>
-                            <option value="1">Bali</option>
-                            <option value="2">Banten</option>
-                            <option value="3">Bengkulu</option>
-                            <option value="4">DI Yogyakarta</option>
-                            <option value="5">DKI Jakarta</option>
-                            <option value="6">Gorontalo</option>
-                            <option value="7">Jambi</option>
-                            <option value="8">Jawa Barat</option>
-                            <option value="9">Jawa Tengah</option>
-                            <option value="10">Jawa Timur</option>
-                            <option value="11">Kalimantan Barat</option>
-                            <option value="12">Kalimantan Selatan</option>
-                            <option value="13">Kalimantan Tengah</option>
-                            <option value="14">Kalimantan Timur</option>
-                            <option value="15">Kalimantan Utara</option>
-                            <option value="16">Kepulauan Bangka Belitung</option>
-                            <option value="17">Kepulauan Riau</option>
-                            <option value="18">Lampung</option>
-                            <option value="19">Maluku</option>
-                            <option value="20">Maluku Utara</option>
-                            <option value="21">Nusa Tenggara Barat</option>
-                            <option value="22">Nusa Tenggara Timur</option>
-                            <option value="23">Papua</option>
-                            <option value="24">Papua Barat</option>
-                            <option value="25">Riau</option>
-                            <option value="26">Sulawesi Barat</option>
-                            <option value="27">Sulawesi Selatan</option>
-                            <option value="28">Sulawesi Tengah</option>
-                            <option value="29">Sulawesi Tenggara</option>
-                            <option value="30">Sulawesi Utara</option>
-                            <option value="31">Sumatera Barat</option>
-                            <option value="32">Sumatera Selatan</option>
-                            <option value="33">Sumatera Utara</option>
-                    </select>
-                    <p>Waktu menuju : </p>
-                    <table>
-                        <tr>
-                            <td>Subuh</td>
-                            <td>Dzuhur</td>
-                            <td>Asar</td>
-                            <td>Maghrib</td>
-                            <td>Isya</td>
-                        </tr>
-                    </table>
-                    </div>
-                </div>
-            </div>
-        </section>
+<div class="gambar-karpet mt-6">
+    <div class="text-wrapper">
+        <div class="title mb-4">
+            <h2 class="text-2xl font-bold">Jadwal Sholat</h2>
+        </div>
+
+        <div class="main-text">
+            <label for="provinsi" class="block text-gray-700 font-medium mb-2">Pilih Provinsi:</label>
+            <select id="provinsi" name="locality" class="border border-gray-300 p-2 rounded w-full">
+                <option value="0">Aceh</option>
+                <option value="1">Bali</option>
+                <option value="2">Banten</option>
+                <option value="3">Bengkulu</option>
+                <option value="4">DI Yogyakarta</option>
+                <option value="5">DKI Jakarta</option>
+                <option value="6">Gorontalo</option>
+                <option value="7">Jambi</option>
+                <option value="8">Jawa Barat</option>
+                <option value="9">Jawa Tengah</option>
+                <option value="10">Jawa Timur</option>
+                <option value="11">Kalimantan Barat</option>
+                <option value="12">Kalimantan Selatan</option>
+                <option value="13">Kalimantan Tengah</option>
+                <option value="14">Kalimantan Timur</option>
+                <option value="15">Kalimantan Utara</option>
+                <option value="16">Kepulauan Bangka Belitung</option>
+                <option value="17">Kepulauan Riau</option>
+                <option value="18">Lampung</option>
+                <option value="19">Maluku</option>
+                <option value="20">Maluku Utara</option>
+                <option value="21">Nusa Tenggara Barat</option>
+                <option value="22">Nusa Tenggara Timur</option>
+                <option value="23">Papua</option>
+                <option value="24">Papua Barat</option>
+                <option value="25">Riau</option>
+                <option value="26">Sulawesi Barat</option>
+                <option value="27">Sulawesi Selatan</option>
+                <option value="28">Sulawesi Tengah</option>
+                <option value="29">Sulawesi Tenggara</option>
+                <option value="30">Sulawesi Utara</option>
+                <option value="31">Sumatera Barat</option>
+                <option value="32">Sumatera Selatan</option>
+                <option value="33">Sumatera Utara</option>
+            </select>
+
+            <p class="mt-4 text-gray-700">Waktu menuju:</p>
+
+            <table class="min-w-full mt-4 border border-black text-left">
+                <thead class="bg-gray-200">
+                    <tr>
+                        <th class="border border-black px-4 py-2">Waktu</th>
+                        <th class="border border-black px-4 py-2">Subuh</th>
+                        <th class="border border-black px-4 py-2">Dzuhur</th>
+                        <th class="border border-black px-4 py-2">Asar</th>
+                        <th class="border border-black px-4 py-2">Maghrib</th>
+                        <th class="border border-black px-4 py-2">Isya</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="border border-black px-4 py-2">Waktu Saat Ini</td>
+                        <td class="border border-black px-4 py-2">04:30</td>
+                        <td class="border border-black px-4 py-2">12:00</td>
+                        <td class="border border-black px-4 py-2">15:15</td>
+                        <td class="border border-black px-4 py-2">18:05</td>
+                        <td class="border border-black px-4 py-2">19:20</td>
+                    </tr>
+                    <tr>
+                        <td class="border border-black px-4 py-2">Menuju</td>
+                        <td class="border border-black px-4 py-2">2 jam 15 menit</td>
+                        <td class="border border-black px-4 py-2">4 jam 30 menit</td>
+                        <td class="border border-black px-4 py-2">7 jam 15 menit</td>
+                        <td class="border border-black px-4 py-2">10 jam</td>
+                        <td class="border border-black px-4 py-2">11 jam 15 menit</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
 
         <section class="tengah">
             <div class="tengah-wrapper container">
